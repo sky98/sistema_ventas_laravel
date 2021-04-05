@@ -46,6 +46,7 @@ class VenderController extends Controller
         // Crear una venta
         $venta = new Venta();
         $venta->id_cliente = $request->input("id_cliente");
+        $venta->id_usuario = $request->input("id_usuario");
         $venta->saveOrFail();
         $idVenta = $venta->id;
         $productos = $this->obtenerProductos();

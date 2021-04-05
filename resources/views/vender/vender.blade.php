@@ -39,6 +39,7 @@
                         </div>
                         @if(session("productos") !== null)
                             <div class="form-group">
+                                <input type="hidden" id="id_usuario" name="id_usuario" value="{{ Auth::user()->id }}">
                                 <button name="accion" value="terminar" type="submit" class="btn btn-success">Terminar
                                     venta
                                 </button>
@@ -80,7 +81,7 @@
                                 <td>{{$producto->codigo_barras}}</td>
                                 <td>{{$producto->descripcion}}</td>
                                 <td>${{number_format($producto->precio_venta, 2)}}</td>
-                                <td>{{$producto->cantidad}}</td>
+                                <td><input type="number" name="cantidad" id="cantidad" value="{{$producto->cantidad}}" step="1"> </td>
                                 <td>
                                     <form action="{{route("quitarProductoDeVenta")}}" method="post">
                                         @method("delete")

@@ -17,7 +17,13 @@ use App\Venta;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::get("/status", function () {
+
+/*
+  Si existe un dios, que me perdone por dejar todas las peticiones aquí
+  en lugar de separarlas a otro archivo o invocar un controlador
+*/
+
+/*Route::get("/status", function () {
     return Auth::guard('api')->check();
 });
 Route::middleware('auth:api')->get('/user', function (Request $request) {
@@ -34,10 +40,7 @@ Route::group(['prefix' => 'auth'], function () {
         Route::get("productos", function () {
             return response()->json(Producto::all());
         });
-        /*
-            Si existe un dios, que me perdone por dejar todas las peticiones aquí
-            en lugar de separarlas a otro archivo o invocar un controlador
-        */
+        
         Route::post("/producto", function(Request $request){
             $producto = new Producto($request->input());
             $producto->saveOrFail();
@@ -105,4 +108,4 @@ Route::group(['prefix' => 'auth'], function () {
         });
 
     });
-});
+});*/
